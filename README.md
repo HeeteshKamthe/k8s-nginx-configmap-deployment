@@ -37,20 +37,24 @@ k8s-nginx-configmap-deployment/</br>
 
 ### 1️. Clone the Repository
 
-`git clone https://github.com/HeeteshKamthe/k8s-nginx-configmap-deployment.git`
-</br>
-`cd k8s-nginx-configmap-deployment` 
+```bash
+git clone https://github.com/HeeteshKamthe/k8s-nginx-configmap-deployment.git
+cd k8s-nginx-configmap-deployment
+```
 
 
 ### 2️. Create the ConfigMap
 
-`kubectl apply -f configmap.yml`
-
+```bash
+kubectl apply -f configmap.yml
+```
 This creates a ConfigMap named nginx-config, containing the custom nginx.conf.
 
 ### 3️. Deploy the NGINX Pod
 
-`kubectl apply -f deployment.yml`
+```bash
+kubectl apply -f deployment.yml
+```
 
 This will:
 
@@ -60,27 +64,37 @@ This will:
 
 ### 4️. Expose the Pod using a NodePort Service
 
-`kubectl apply -f service.yml`
+```bash
+kubectl apply -f service.yml
+```
 
 This exposes the NGINX container using a NodePort (e.g., 30008).
 
 To check which port is assigned:
 
-`kubectl get svc nginx-service`
+```bash
+kubectl get svc nginx-service
+```
 
 ### 5️. Access the Application
 #### Option A: From Browser (External)
 
-`http://<worker-node-public-ip>:<nodePort>`
+```bash
+http://<worker-node-public-ip>:<nodePort>
+```
 
 
 #### Option B: From the Node (Internal)
 
-`curl http://localhost:<nodePort>`
+```bash
+curl http://localhost:<nodePort>
+```
 
 Example:
 
-`curl http://localhost:30008`
+```bash
+curl http://localhost:30008
+```
 
 ---
 
