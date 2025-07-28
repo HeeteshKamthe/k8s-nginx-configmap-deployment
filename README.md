@@ -8,9 +8,9 @@ This project demonstrates how to deploy an Nginx web server on Kubernetes using 
 ##  Project Structure
 
 k8s-nginx-configmap-deployment/</br>
-├── configmap.yaml    # Creates a ConfigMap with custom nginx.conf</br>
-├── deployment.yaml   # Deploys NGINX Pod using the ConfigMap</br>
-├── service.yaml      # Exposes NGINX using a NodePort service</br>
+├── configmap.yml    # Creates a ConfigMap with custom nginx.conf</br>
+├── deployment.yml   # Deploys NGINX Pod using the ConfigMap</br>
+├── service.yml      # Exposes NGINX using a NodePort service</br>
 ├── nginx.conf        # Custom NGINX configuration file</br>
 
 ---
@@ -44,13 +44,13 @@ k8s-nginx-configmap-deployment/</br>
 
 ### 2️. Create the ConfigMap
 
-`kubectl apply -f configmap.yaml`
+`kubectl apply -f configmap.yml`
 
 This creates a ConfigMap named nginx-config, containing the custom nginx.conf.
 
 ### 3️. Deploy the NGINX Pod
 
-`kubectl apply -f deployment.yaml`
+`kubectl apply -f deployment.yml`
 
 This will:
 
@@ -60,7 +60,7 @@ This will:
 
 ### 4️. Expose the Pod using a NodePort Service
 
-`kubectl apply -f service.yaml`
+`kubectl apply -f service.yml`
 
 This exposes the NGINX container using a NodePort (e.g., 30008).
 
